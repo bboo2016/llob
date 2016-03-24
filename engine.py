@@ -37,7 +37,8 @@ def true_submit(order):
   if o.orderid in idmap:
     raise RuntimeError("dup order? %s" % o.orderid)
   # add to the order map
-  o,posts = do_fills(o)
+  #o,posts = do_fills(o)
+  posts = True
   if posts:
     idmap[o.orderid] = o  
     symprc[o.sym][o.prc].append(o)
